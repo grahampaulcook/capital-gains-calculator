@@ -23,3 +23,35 @@ This service is written in [Scala](http://www.scala-lang.org/) and [Play](http:/
 ## License
 
 This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html")
+
+<table>
+    <tbody>
+        <tr>
+            <th>Path</th>
+            <th>Supported Methods</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>/calculate-flat</code></td>
+            <td>GET</td>
+            <td>Returns a JSON object with the results from the flat calculation. This requires a CalculationRequestModel which is made of the following variables: customerType: String,  priorDisposal: String,
+                annualExemptAmount: Option[Double], otherProperties: Option[Double], 
+                                                                                                                        
+                                                                                                                        Param <- optionalDoubleBinder.bind(keys.otherPropertiesAmount, params)
+                                                                                                                        vulnerableParam <- optionalStringBinder.bind(keys.vulnerable, params)
+                                                                                                                        currentIncomeParam <- optionalDoubleBinder.bind(keys.currentIncome, params)
+                                                                                                                        personalAllowanceParam <- optionalDoubleBinder.bind(keys.personalAllowanceAmount, params)
+                                                                                                                        disposalValueParam <- doubleBinder.bind(keys.disposalValue, params)
+                                                                                                                        disposalCostsParam <- doubleBinder.bind(keys.disposalCosts, params)
+                                                                                                                        initialValueParam <- doubleBinder.bind(keys.initialValue, params)
+                                                                                                                        initialCostsParam <- doubleBinder.bind(keys.initialCosts, params)
+                                                                                                                        improvementsParam <- doubleBinder.bind(keys.improvementsAmount, params)
+                                                                                                                        reliefsParam <- doubleBinder.bind(keys.reliefsAmount, params)
+                                                                                                                        allowableLossesParam <- doubleBinder.bind(keys.allowableLosses, params)
+                                                                                                                        acquisitionDateParam <- optionalDateTimeBinder.bind(keys.acquisitionDate, params)
+                                                                                                                        disposalDateParam <- dateTimeBinder.bind(keys.disposalDate, params)
+                                                                                                                        isClaimingPRRParam <- optionalStringBinder.bind(keys.isClaimingPRR, params)
+                                                                                                                        daysClaimedParam <- optionalDoubleBinder.bind(keys.daysClaimed, params)</td>
+        </tr>
+    </tbody>
+</table>
