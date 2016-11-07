@@ -35,31 +35,31 @@
             </headings>
             <rows>
                 <row>
-                    <cell><code>Disposal Value</code></cell>
+                    <cell><code>disposalValue</code></cell>
                     <cell><code>Double</code></cell>
                     <cell><code>1000.00</code></cell>
                     <cell>The numeric worth of the property when disposed in £.</cell>
                 </row>
                 <row>
-                    <cell><code>Disposal Costs</code></cell>
+                    <cell><code>disposalCosts</code></cell>
                     <cell><code>Double</code></cell>
                     <cell><code>1000.00</code></cell>
                     <cell>The costs associated with the property disposal in £.</cell>
                 </row>
                 <row>
-                    <cell><code>Acquisition Value</code></cell>
+                    <cell><code>acquisitionValue</code></cell>
                     <cell><code>Double</code></cell>
                     <cell><code>1000.00</code></cell>
                     <cell>The numeric worth of the property when acquired in £.</cell>
                 </row>
                 <row>
-                    <cell><code>Acquisition Costs</code></cell>
+                    <cell><code>acquisitionCosts</code></cell>
                     <cell><code>Double</code></cell>
                     <cell><code>1000.00</code></cell>
                     <cell>The costs associated with the property acquisition in £.</cell>
                 </row>
                 <row>
-                    <cell><code>Improvements</code></cell>
+                    <cell><code>improvements</code></cell>
                     <cell><code>Double</code></cell>
                     <cell><code>1000.00</code></cell>
                     <cell>The costs associated with improvements made to the property in £.</cell>
@@ -85,9 +85,11 @@
     <section id="response">
         <title>Response</title>
         <httpStatus>200 (OK)</httpStatus>
-        <json><![CDATA[{
-            "totalGain": 1000.0
-        }]]></json>
+        <json>
+<![CDATA[{
+    "totalGain": 1000.0
+}]]>
+        </json>
         <table>
             <headings>
                 <cell>Name</cell>
@@ -97,7 +99,7 @@
             </headings>
             <rows>
                 <row>
-                    <cell><code>Total Gain</code></cell>
+                    <cell><code>totalGain</code></cell>
                     <cell><code>Double</code></cell>
                     <cell><code>1000.0</code></cell>
                     <cell>The Total Gain from the Disposal</cell>
