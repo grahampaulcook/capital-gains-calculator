@@ -1,0 +1,145 @@
+<endpoint>
+    <name>Resident Properties Calculate Total Gain</name>
+    <description>Calculates the total gain of a property for a resident.</description>
+    <section id="resource">
+        <title>Resource</title>
+        <resource>GET /capital-gains-calculator/calculate-total-gain?disposalValue={disposalValue}&amp;disposalCosts={disposalCosts}&amp;acquisitionValue={acquisitionValue}&amp;acquisitionCosts={acquisitionCosts}&amp;improvements={improvements}</resource>
+    </section>
+    <!--<section id="path-parameters">-->
+        <!--<title>Path Parameters</title>-->
+        <!--<table>-->
+            <!--<headings>-->
+                <!--<cell>Name</cell>-->
+                <!--<cell>Type</cell>-->
+                <!--<cell>Example</cell>-->
+                <!--<cell>Description</cell>-->
+            <!--</headings>-->
+            <!--<rows>-->
+                <!--<row>-->
+                    <!--<cell><code>Disposal Value</code></cell>-->
+                    <!--<cell><code>String</code></cell>-->
+                    <!--<cell><code>1000.00</code></cell>-->
+                    <!--<cell>The numeric worth of the property when disposed in £.</cell>-->
+                <!--</row>-->
+            <!--</rows>-->
+        <!--</table>-->
+    <!--</section>-->
+    <section id="query-parameters">
+        <title>Query Parameters</title>
+        <table>
+            <headings>
+                <cell>Name</cell>
+                <cell>Type</cell>
+                <cell>Example</cell>
+                <cell>Description</cell>
+            </headings>
+            <rows>
+                <row>
+                    <cell><code>Disposal Value</code></cell>
+                    <cell><code>Double</code></cell>
+                    <cell><code>1000.00</code></cell>
+                    <cell>The numeric worth of the property when disposed in £.</cell>
+                </row>
+                <row>
+                    <cell><code>Disposal Costs</code></cell>
+                    <cell><code>Double</code></cell>
+                    <cell><code>1000.00</code></cell>
+                    <cell>The costs associated with the property disposal in £.</cell>
+                </row>
+                <row>
+                    <cell><code>Acquisition Value</code></cell>
+                    <cell><code>Double</code></cell>
+                    <cell><code>1000.00</code></cell>
+                    <cell>The numeric worth of the property when acquired in £.</cell>
+                </row>
+                <row>
+                    <cell><code>Acquisition Costs</code></cell>
+                    <cell><code>Double</code></cell>
+                    <cell><code>1000.00</code></cell>
+                    <cell>The costs associated with the property acquisition in £.</cell>
+                </row>
+                <row>
+                    <cell><code>Improvements</code></cell>
+                    <cell><code>Double</code></cell>
+                    <cell><code>1000.00</code></cell>
+                    <cell>The costs associated with improvements made to the property in £.</cell>
+                </row>
+            </rows>
+        </table>
+    </section>
+    <section id="authorisation">
+        <title>Authorisation</title>
+        <authorisation>
+            <type>NONE</type>
+            <scope>read:capital-gains-calculator</scope>
+        </authorisation>
+    </section>
+    <section id="content-types">
+        <title>Accepted Media Types</title>
+        <list>
+            <item>
+                <code>application/vnd.hmrc.1.0+json</code>
+            </item>
+        </list>
+    </section>
+    <section id="response">
+        <title>Response</title>
+        <httpStatus>200 (OK)</httpStatus>
+        <json><![CDATA[{
+            "totalGain": 1000.0
+        }]]></json>
+        <table>
+            <headings>
+                <cell>Name</cell>
+                <cell>Type</cell>
+                <cell>Example</cell>
+                <cell>Description</cell>
+            </headings>
+            <rows>
+                <row>
+                    <cell><code>Total Gain</code></cell>
+                    <cell><code>Double</code></cell>
+                    <cell><code>1000.0</code></cell>
+                    <cell>The Total Gain from the Disposal</cell>
+                </row>
+            </rows>
+        </table>
+    </section>
+    <section id="error-scenarios">
+        <title>Error Scenarios</title>
+        <table>
+            <headings>
+                <cell>Error Scenario</cell>
+                <cell>HTTP Status</cell>
+                <cell>Code</cell>
+            </headings>
+            <rows>
+                <row>
+                    <cell>Invalid Disposal Value</cell>
+                    <cell><code>400 (Bad Request)</code></cell>
+                    <cell><code>DISPOSAL_VALUE_INVALID</code></cell>
+                </row>
+                <row>
+                    <cell>Invalid Disposal Costs</cell>
+                    <cell><code>400 (Bad Request)</code></cell>
+                    <cell><code>DISPOSAL_COSTS_INVALID</code></cell>
+                </row>
+                <row>
+                    <cell>Invalid Acquisition Value</cell>
+                    <cell><code>400 (Bad Request)</code></cell>
+                    <cell><code>ACQUISITION_VALUE_INVALID</code></cell>
+                </row>
+                <row>
+                    <cell>Invalid Acquisition Costs</cell>
+                    <cell><code>400 (Bad Request)</code></cell>
+                    <cell><code>ACQUISITION_COSTS_INVALID</code></cell>
+                </row>
+                <row>
+                    <cell>Invalid Improvements</cell>
+                    <cell><code>400 (Bad Request)</code></cell>
+                    <cell><code>IMPROVEMENTS_INVALID</code></cell>
+                </row>
+            </rows>
+        </table>
+    </section>
+</endpoint>

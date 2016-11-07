@@ -1,0 +1,52 @@
+{
+  "scopes":[
+    {
+      "key":"read:capital-gains-calculator",
+      "name":"calculate capital gains tax",
+      "description":"Calculate your Capital Gains Tax"
+    }
+  ],
+  "api":{
+    "name":"Capital Gains Calculator",
+    "description":"Services to calculate your Capital Gains Tax liability.",
+    "context":"capital-gains-calculator",
+    "versions":[
+      {
+        "version":"1.0",
+        "status":"PROTOTYPED",
+        "endpoints":[
+          {
+            "uriPattern":"/capital-gains-calculator/calculate-total-gain?disposalValue={disposalValue}&disposalCosts={disposalCosts}&acquisitionValue={acquisitionValue}&acquisitionCosts={acquisitionCosts}&improvements={improvements}",
+            "endpointName":"Resident Properties Calculate Total Gain",
+            "method":"GET",
+            "authType":"NONE",
+            "throttlingTier":"UNLIMITED",
+            "scope":"read:capital-gains-calculator",
+            "queryParameters": [
+              {
+                "name": "disposalValue",
+                "required": true
+              },
+              {
+                "name": "disposalCosts",
+                "required": true
+              },
+              {
+                "name": "acquisitionValue",
+                "required": true
+              },
+              {
+                "name": "acquisitionCosts",
+                "required": true
+              },
+              {
+                "name": "improvements",
+                "required": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
